@@ -7,7 +7,6 @@
 //
 
 /*
-
  三张图A、B、C你要做的scrollview实际上应该是五张的大小顺序是C、A、B、C、A。初始偏移量设置到第二张，监听scrollview滑动事件。判断偏移量。当偏移量在第一张时将偏移量修改到第四张，当偏移量在第五张时将偏移量调整到第二章。这样在循环时比较流畅
  */
 
@@ -51,15 +50,18 @@
     if (self) {
         self.imageIndex = 0;
         if (configBlock) {
+            __weak CarouselConfigurationBlock weakConfigBlock = configBlock;
+            
             JYConfiguration *configurate = [[JYConfiguration alloc] init];
             configurate.interValTime = DefaultTime;
-            self.config = configBlock(configurate);
+            self.config = weakConfigBlock(configurate);
         }else{
             self.config = [[JYConfiguration alloc] init];
             self.config.interValTime = DefaultTime;
         }
         if (clickBlock) {
-            self.clickBlock = clickBlock;
+            __weak CarouselClickBlock weakClickBlock = clickBlock;
+            self.clickBlock = weakClickBlock;
         }
         [self initView];
     }
@@ -96,7 +98,6 @@
             imageView.userInteractionEnabled = YES;
             imageView.contentMode = UIViewContentModeScaleToFill;
             [_scrollView addSubview:imageView];
-            imageView.backgroundColor = [UIColor colorWithRed:(arc4random()%10)/10.0 green:(arc4random()%10)/10.0 blue:(arc4random()%10)/10.0 alpha:1.0];
             [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageClick:)]];
             
             [self.imageViewArray addObject:imageView];
@@ -195,9 +196,10 @@
 
 #pragma mark -=======================视图点击事件=======================
 - (void)imageClick:(UITapGestureRecognizer *)sender{
+    __weak typeof(self) weakSelf = self;
     if (self.clickBlock) {
         [self changeImageIndex];
-        self.clickBlock(self.imageIndex-1);
+        weakSelf.clickBlock(weakSelf.imageIndex-1);
     }
 }
 

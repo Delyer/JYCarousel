@@ -19,6 +19,8 @@
 //View的高度
 #define ViewHeight(view) CGRectGetHeight(view.frame)
 
+#define JYWeakSelf __weak typeof(self) weakSelf = self
+
 //获取用户自定义属性
 typedef JYConfiguration *(^CarouselConfigurationBlock)(JYConfiguration *carouselConfig);
 
