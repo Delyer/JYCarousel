@@ -13,6 +13,7 @@
 
 
 #import "JYCarousel.h"
+#import "UIImageView+JYImageViewManager.h"
 
 @interface JYCarousel ()<UIScrollViewDelegate>
 
@@ -179,14 +180,14 @@
     if ([obj isKindOfClass:[NSString class]]) { // 本地图片名或者urlStr
         imageView.image = [UIImage imageNamed:obj];
         if (imageView.image == nil) {
-//            [imageView sd_setImageWithURL:obj placeholderImage:self.configuration.placeholder];
+            [imageView jy_setImageWithURLString:obj placeholder:self.config.placeholder];
         }
         return;
-    } else if ([obj isKindOfClass:[UIImage class]]) { // UIImage对象
-        imageView.image = obj;
+    }else if ([obj isKindOfClass:[NSURL class]]) { // 远程图片URL
+        [imageView jy_setImageWithURLString:obj placeholder:self.config.placeholder];
         return;
-    } else if ([obj isKindOfClass:[NSURL class]]) { // 远程图片URL
-//        [imageView sd_setImageWithURL:obj placeholderImage:self.placeholder];
+    }else if ([obj isKindOfClass:[UIImage class]]) { // UIImage对象
+        imageView.image = obj;
         return;
     }
 }

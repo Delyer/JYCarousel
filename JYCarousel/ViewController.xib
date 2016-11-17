@@ -15,7 +15,23 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqT-3M-Xgk">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="XVv-IV-ebt"/>
+                        <constraint firstAttribute="width" constant="100" id="ZME-Fb-aMu"/>
+                    </constraints>
+                    <state key="normal" title="nextPage"/>
+                    <connections>
+                        <action selector="nexPageAction:" destination="-1" eventType="touchUpInside" id="pK3-8w-Wzv"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dqT-3M-Xgk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RqX-TX-0dc"/>
+                <constraint firstAttribute="bottom" secondItem="dqT-3M-Xgk" secondAttribute="bottom" constant="50" id="iUR-qs-pRN"/>
+            </constraints>
         </view>
     </objects>
 </document>
