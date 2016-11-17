@@ -6,7 +6,6 @@
 
 **开源库简介：** 这是一个使用起来非常简单的开源轮播库，自带下载和缓存，不会造成循环引用，不用考虑定时器不会销毁（我都已经帮你做好了）。
 
----
 
 
 ## **1. 轮播基本原理**
@@ -66,7 +65,9 @@
                        target:(id<JYCarouselDelegate>)target;
 </pre>
 
+
 **使用举例：**
+
 <pre>
 - (void)addCarouselView1{
     __weak typeof(self) weakSelf = self;
