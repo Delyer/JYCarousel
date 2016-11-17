@@ -45,7 +45,9 @@
 
  @return carousel
  */
-- (instancetype)initWithFrame:(CGRect)frame configBlock:(CarouselConfigurationBlock)configBlock clickBlock:(CarouselClickBlock)clickBlock;
+- (instancetype)initWithFrame:(CGRect)frame
+                  configBlock:(CarouselConfigurationBlock)configBlock
+                   clickBlock:(CarouselClickBlock)clickBlock;
 
 
 /**
@@ -57,7 +59,9 @@
  
  @return carousel
  */
-- (instancetype)initWithFrame:(CGRect)frame configBlock:(CarouselConfigurationBlock)configBlock target:(id<JYCarouselDelegate>)target;
+- (instancetype)initWithFrame:(CGRect)frame
+                  configBlock:(CarouselConfigurationBlock)configBlock
+                       target:(id<JYCarouselDelegate>)target;
 
 
 
