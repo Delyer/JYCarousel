@@ -20,9 +20,6 @@
 
 @end
 
-
-
-
 @implementation JYImageDownloader
 
 + (JYImageDownloader *)sharedDownloader {

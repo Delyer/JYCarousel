@@ -8,6 +8,7 @@
 
 #import "SubViewController.h"
 #import "JYCarousel.h"
+#import "JYImageCache.h"
 
 @interface SubViewController ()
 @property (nonatomic, strong) JYCarousel *carouselView2;
@@ -35,7 +36,6 @@
     [self.view addSubview:carouselView1];
     
     
-    
     //_carouselView2
     NSMutableArray *imageArray2 = [[NSMutableArray alloc] initWithArray: @[@"http://p1.bqimg.com/524586/894925a41a745ba8.jpg",@"http://p1.bqimg.com/524586/edd59898ac21642f.jpg",@"http://p1.bqimg.com/524586/d277aa654cd60c3d.jpg",@"http://p1.bqimg.com/524586/a49b8d3e1b953f25.jpg",@"http://p1.bqimg.com/524586/972bff3b7a5fb7e1.jpg"]];
     
@@ -43,6 +43,7 @@
         carouselConfig.pageContollType = MiddlePageControl;
         carouselConfig.pageTintColor = [UIColor whiteColor];
         carouselConfig.currentPageTintColor = [UIColor redColor];
+        carouselConfig.placeholder = [UIImage imageNamed:@"default"];
         return carouselConfig;
     } clickBlock:^(NSInteger index) {
         [weakSelf clickIndex:index];
@@ -53,8 +54,10 @@
 }
 - (void)clickIndex:(NSInteger)index{
     NSLog(@"你点击图片索引index = %ld",index);
+    
+    //清楚缓存数据 可以在启动的时候清楚一次上一次轮播缓存
+    [[JYImageCache sharedImageCache] jy_clearDiskCaches];
 }
-
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

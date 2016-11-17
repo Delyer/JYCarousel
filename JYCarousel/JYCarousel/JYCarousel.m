@@ -118,7 +118,7 @@
 }
 
 
-#pragma mark -----------set方法开始运行-------------------
+#pragma mark - -----------set方法开始运行-------------------
 - (void)setImages:(NSMutableArray *)images{
     NSInteger num = images.count;
     if (images.count > 0) {
@@ -145,7 +145,7 @@
     }
 }
 
-#pragma mark -----------更新图片-------------------
+#pragma mark - -----------更新图片-------------------
 
 - (void)updateImageViewContent{
     
@@ -194,7 +194,7 @@
 }
 
 
-#pragma mark -=======================视图点击事件=======================
+#pragma mark - -------------------视图点击事件-------------------
 - (void)imageClick:(UITapGestureRecognizer *)sender{
     __weak typeof(self) weakSelf = self;
     if (self.clickBlock) {
@@ -203,7 +203,7 @@
     }
 }
 
-#pragma mark -=======================定时器=======================
+#pragma mark - -------------------定时器-------------------
 //开始定时器
 - (void)beginTimer{
     if ((self.config.interValTime >0) && (self.timer == nil) && self.isAutoPlay) {
@@ -231,7 +231,7 @@
     }];
 }
 
-#pragma mark -=======================UIScrollViewDelegate=======================
+#pragma mark - -------------------UIScrollViewDelegate-------------------
 //开始拖拽
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     //暂停定时器

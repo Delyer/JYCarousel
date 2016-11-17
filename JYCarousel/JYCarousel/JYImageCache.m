@@ -81,13 +81,17 @@
 
 
 - (void)jy_clearDiskCaches{
-    NSString *directoryPath = [NSString jy_cachePath];
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:directoryPath isDirectory:nil]) {
-        NSError *error = nil;
-        [[NSFileManager defaultManager] removeItemAtPath:directoryPath error:&error];
-    }
-    [self jy_clearCacheFaileTimesDict];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    dispatch_async(queue, ^{
+        NSString *directoryPath = [NSString jy_cachePath];
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:directoryPath isDirectory:nil]) {
+            NSError *error = nil;
+            [[NSFileManager defaultManager] removeItemAtPath:directoryPath error:&error];
+        }
+        [self jy_clearCacheFaileTimesDict];
+    });
+   
 
 }
 
@@ -116,12 +120,16 @@
                                   withIntermediateDirectories:YES
                                                    attributes:nil
                                                         error:&error];
+
         if (error) {
+#ifdef kDebugLog
             NSLog(@"create cache dir error: %@", error);
+#endif
             return;
         }
+
     }
-    
+
     NSString *path = [NSString stringWithFormat:@"%@/%@",
                       directoryPath,
                       [NSString jy_md5Hash:[NSString jy_keyForRequest:request]]];
@@ -130,9 +138,13 @@
         BOOL isOk = [[NSFileManager defaultManager] createFileAtPath:path contents:data attributes:nil];
         
         if (isOk) {
-            NSLog(@"cache file ok for request: %@", [NSString jy_md5Hash:[NSString jy_keyForRequest:request]]);
+#ifdef kDebugLog
+            NSLog(@"save file ok for request: %@", [NSString jy_md5Hash:[NSString jy_keyForRequest:request]]);
+#endif
         } else {
-            NSLog(@"cache file error for request: %@", [NSString jy_md5Hash:[NSString jy_keyForRequest:request]]);
+#ifdef kDebugLog
+            NSLog(@"save file error for request: %@", [NSString jy_md5Hash:[NSString jy_keyForRequest:request]]);
+#endif
         }
     }
 }

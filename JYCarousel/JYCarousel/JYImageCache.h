@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
+#define kDebugLog
+
 @interface JYImageCache : NSObject
 
 + (JYImageCache *)sharedImageCache;
