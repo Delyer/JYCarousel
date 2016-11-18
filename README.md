@@ -7,12 +7,18 @@
 **开源库简介：** 这是一个使用起来非常简单的开源轮播库，自带下载和缓存，不会造成循环引用，不用考虑定时器不会销毁（我都已经帮你做好了）。
 
 
+![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselIcon.png)
+
 
 ## **1. 轮播基本原理**
 
 使用三个imageView添加到ScrollView，始终保持中间的imageView在可视界面里。当前的imageView滚动到下一个imageView，然后把下一个imageView滚动到三个imageView的中心位置，在这过程中赋值的时候是三个imageView同时赋值，滚动的时候找到最中间的imageView，把这个imageView的tag值设置为当前的索引，滚动完成后把这个imageView设置为中心滚动位置。
 
 比如三张图A、B、C。要做的scrollview实际上应该是五张的大小顺序是C、A、B、C、A。初始偏移量设置到第二张，监听scrollview滑动事件。判断偏移量。当偏移量在第一张时将偏移量修改到第四张，当偏移量在第五张时将偏移量调整到第二章。这样在循环时比较流畅，才能无缝无限循环滚动
+
+
+![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselAnimation.gif)
+
 
 ## **2. 轮播的特性**
 - **无缝循环轮播，处理的很好，不会显得生硬**
@@ -53,6 +59,7 @@
 - **JYCarouselAnimation**
 	- 作用：轮播翻页的效果动画
 
+![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselStruct.png)
 
 ## **4. 轮播组件的使用**
 
