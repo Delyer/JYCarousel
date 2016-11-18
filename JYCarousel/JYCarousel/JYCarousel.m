@@ -13,6 +13,7 @@
 
 #import "JYCarousel.h"
 #import "UIImageView+JYImageViewManager.h"
+#import "JYCarouselAnimation.h"
 
 @interface JYCarousel ()<UIScrollViewDelegate>
 
@@ -37,6 +38,9 @@
 
 //是否自动轮播,默认是轮播的
 @property (nonatomic, assign) BOOL isAutoPlay;
+
+//动画
+@property (nonatomic, strong) JYCarouselAnimation *animation;
 
 @end
 
@@ -71,6 +75,19 @@
 - (void)initView{
     self.imageViewArray = [NSMutableArray array];
     self.pageControl = [[JYPageControl alloc] init];
+    if (self.config.backViewColor) {
+        self.backgroundColor = self.config.backViewColor;
+    }
+    if (self.config.backViewImage) {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewWidth(self), ViewHeight(self))];
+        imageView.userInteractionEnabled = YES;
+        imageView.contentMode = UIViewContentModeScaleToFill;
+        imageView.image = self.config.backViewImage;
+        [self addSubview:imageView];
+    }
+    if (!self.animation) {
+        self.animation = [[JYCarouselAnimation alloc] initWithConfiguration:self.config];
+    }
     [self addSubView];
 }
 
@@ -222,13 +239,21 @@
 
 - (void)timeAction{
     __weak typeof(self)weakSelf = self;
-    [UIView animateWithDuration:0.35 animations:^{
-        weakSelf.scrollView.contentOffset = CGPointMake(2 *ViewWidth(self.scrollView), 0);
-    } completion:^(BOOL finished) {
+    if (self.config.pushAnimationType == PushDefault) {
+        [UIView animateWithDuration:0.35 animations:^{
+            weakSelf.scrollView.contentOffset = CGPointMake(2 *ViewWidth(self.scrollView), 0);
+        } completion:^(BOOL finished) {
+            [self changeImageIndex];
+            [weakSelf updateImageViewContent];
+            [weakSelf setupScrollViewContentSize];
+        }];
+    }else{
+        [self.animation startAnimationInView:weakSelf.scrollView];
+        self.scrollView.contentOffset = CGPointMake(2 *ViewWidth(self.scrollView), 0);
         [self changeImageIndex];
-        [weakSelf updateImageViewContent];
-        [weakSelf setupScrollViewContentSize];
-    }];
+        [self updateImageViewContent];
+        [self setupScrollViewContentSize];
+    }
 }
 
 #pragma mark - -------------------UIScrollViewDelegate-------------------

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30184151DDE6A6F00AC8F13 /* JYCarouselAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */; };
 		A33B0F7F1DDA887400D85447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F7E1DDA887400D85447 /* main.m */; };
 		A33B0F851DDA887400D85447 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F841DDA887400D85447 /* ViewController.m */; };
 		A33B0F8A1DDA887400D85447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33B0F891DDA887400D85447 /* Assets.xcassets */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A30184131DDE6A6F00AC8F13 /* JYCarouselAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCarouselAnimation.h; sourceTree = "<group>"; };
+		A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCarouselAnimation.m; sourceTree = "<group>"; };
 		A33B0F7A1DDA887400D85447 /* JYCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JYCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33B0F7E1DDA887400D85447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A33B0F831DDA887400D85447 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				A355549B1DDE2C6600418BE6 /* JYImageDownloader.m */,
 				A35554A01DDE338C00418BE6 /* JYImageCache.h */,
 				A35554A11DDE338C00418BE6 /* JYImageCache.m */,
+				A30184131DDE6A6F00AC8F13 /* JYCarouselAnimation.h */,
+				A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */,
 			);
 			path = JYCarousel;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			files = (
 				A33B0F851DDA887400D85447 /* ViewController.m in Sources */,
 				A33B0F7F1DDA887400D85447 /* main.m in Sources */,
+				A30184151DDE6A6F00AC8F13 /* JYCarouselAnimation.m in Sources */,
 				A355549C1DDE2C6600418BE6 /* JYImageDownloader.m in Sources */,
 				A33B0FBD1DDA904000D85447 /* JYCarousel.m in Sources */,
 				A355549F1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m in Sources */,
