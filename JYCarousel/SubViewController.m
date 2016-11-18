@@ -130,7 +130,7 @@
 
 - (void)clickIndex:(NSInteger)index{
     NSLog(@"你点击图片索引index = %ld",index);
-    //清楚缓存数据 可以在启动的时候清楚一次上一次轮播缓存,根据自己需要
+    //清除缓存数据 可以在启动的时候清除一次上一次轮播缓存,根据自己需要
     [[JYImageCache sharedImageCache] jy_clearDiskCaches];
 }
 

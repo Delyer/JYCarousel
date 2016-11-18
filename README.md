@@ -36,14 +36,12 @@
 - **JYCarouselAnimation**
 	- 作用：轮播翻页的效果动画
 
-![](https://on-img.com/chart_image/thumb/mind/582e6ad3e4b06bc83a185bc3.png)
-
 
 ## **3. 轮播组件的使用**
 
 #### **提供两个初始化方法：**
 
-<pre>
+```
 /**
  block方式回调初始化
  @param frame       frame
@@ -66,14 +64,15 @@
 - (instancetype)initWithFrame:(CGRect)frame
                   configBlock:(CarouselConfigurationBlock)configBlock
                        target:(id<JYCarouselDelegate>)target;
-</pre>
+```
 
 
 
 #### **使用举例：**
 
+##### **1.block回调方式创建：**
 
-<pre>
+```
 - (void)addCarouselView1{
     __weak typeof(self) weakSelf = self;
     //图片数组（或者图片URL，图片URL字符串，图片UIImage对象）
@@ -96,10 +95,40 @@
     [carouselView startCarouselWithArray:imageArray];
     [self.view addSubview:carouselView];
 }
-</pre>
+```
 
+##### **2.delegate回调方式创建：**
 
-如果使用Delegate可以遵循协议，实现代理方法也可以实现回调
+```
+//遵循协议
+@interface SubViewController ()<JYCarouselDelegate>
+
+//创建
+- (void)addCarouselView{
+    NSMutableArray *imageArray = [[NSMutableArray alloc] initWithArray: @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg"]];
+    
+    JYCarousel *carouselView = [[JYCarousel alloc] initWithFrame:CGRectMake(0, 540, ViewWidth(self.view), 100) configBlock:^JYConfiguration *(JYConfiguration *carouselConfig) {
+        carouselConfig.pageContollType = LeftPageControl;
+        carouselConfig.interValTime = 3.0;
+        carouselConfig.pushAnimationType = PushCameraIrisHollowOpen;
+        carouselConfig.backViewImage = [UIImage imageNamed:@"default"];
+        return carouselConfig;
+    } target:self];
+    
+    //开始轮播
+    [carouselView startCarouselWithArray:imageArray];
+    [self.view addSubview:carouselView];
+}
+
+//回调方法
+- (void)carouselViewClick:(NSInteger)index{
+    NSLog(@"代理方式你点击图片索引index = %ld",index);
+    //清楚缓存数据 可以在app启动的时候清楚上一次轮播缓存,根据自己需要
+    [[JYImageCache sharedImageCache] jy_clearDiskCaches];
+}
+
+```
+
 
 ## **4. 注意事项：**
 
