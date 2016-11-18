@@ -136,7 +136,8 @@
         for(NSInteger i = 0; i < AllImageViewCount; i++) {
             UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(i * ViewWidth(_scrollView), 0, ViewWidth(_scrollView), ViewHeight(_scrollView))];
             imageView.userInteractionEnabled = YES;
-            imageView.contentMode = UIViewContentModeScaleToFill;
+            imageView.contentMode = self.config.contentMode;
+            imageView.reloadTimesForFailedURL = self.config.faileReloadTimes;
             [_scrollView addSubview:imageView];
             [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageClick:)]];
             

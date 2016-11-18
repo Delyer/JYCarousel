@@ -56,6 +56,7 @@
         carouselConfig.pageTintColor = [UIColor whiteColor];
         carouselConfig.currentPageTintColor = [UIColor redColor];
         carouselConfig.placeholder = [UIImage imageNamed:@"default"];
+        carouselConfig.faileReloadTimes = 5;
         return carouselConfig;
     } clickBlock:^(NSInteger index) {
         [weakSelf clickIndex:index];
@@ -112,7 +113,7 @@
     
     JYCarousel *carouselView = [[JYCarousel alloc] initWithFrame:CGRectMake(0, 540, ViewWidth(self.view), 100) configBlock:^JYConfiguration *(JYConfiguration *carouselConfig) {
         carouselConfig.pageContollType = LeftPageControl;
-        carouselConfig.interValTime = 2.5;
+        carouselConfig.interValTime = 3.0;
         carouselConfig.pushAnimationType = PushCameraIrisHollowOpen;
         carouselConfig.backViewImage = [UIImage imageNamed:@"default"];
         return carouselConfig;

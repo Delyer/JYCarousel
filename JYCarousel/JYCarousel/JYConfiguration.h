@@ -76,28 +76,45 @@ static NSTimeInterval DefaultTime = 3.0;
 
 @interface JYConfiguration : NSObject
 
-#pragma mark - 指示器PageControl属性
-//指示器类型（label和pageContoller样式）
+/**
+ 占位图
+ */
+@property (nonatomic, strong) UIImage *placeholder;
+
+/**
+ 轮播时间间隔（默认：3s，当设置为0s时,停止自动轮播）
+ */
+@property (assign, nonatomic) NSTimeInterval interValTime;
+
+/**
+ 指示器类型（label和pageContoller样式）
+ */
 @property (nonatomic, assign) CarouselPageControllType pageContollType;
-//填充颜色
+
+/**
+ 指示器填充颜色
+ */
 @property (strong, nonatomic) UIColor *currentPageTintColor;
-//颜色
+
+/**
+ 指示器颜色
+ */
 @property (strong, nonatomic) UIColor *pageTintColor;
 
 
-#pragma mark - 占位图
-//占位图
-@property (nonatomic, strong) UIImage *placeholder;
+/**
+ 图片填充类型(默认是UIViewContentModeScaleToFill)
+ */
+@property (nonatomic, assign) UIViewContentMode contentMode;
 
-#pragma mark - 轮播时间间隔 （默认：3s，当设置为0s时,停止自动轮播）
-//轮播时间间隔
-@property (assign, nonatomic) NSTimeInterval interValTime;
 
-#pragma mark - push翻页效果
-//轮播翻页类型
+/**
+ 轮播翻页类型
+ */
 @property (nonatomic, assign) CarouselPushType pushAnimationType;
 
 #pragma mark - push翻页方向（只会在CarouselPushType为PushMoveIn、PushReveal、PushCube、PushPageCurl、PushPageUnCurl有效果）
+
 /**
  *  kCATransitionFromRight
  *  kCATransitionFromLeft
@@ -107,10 +124,21 @@ static NSTimeInterval DefaultTime = 3.0;
 @property (nonatomic, strong) NSString *animationSubtype;
 
 #pragma mark - 轮播背景颜色或者背景图片(在PushCameraIrisHollowOpen,  PushCameraIrisHollowClose, PushPageUnCurl, PushPageCurl,PushCube能看到效果)
-//轮播背景颜色
+/**
+ 轮播背景颜色
+ */
 @property (nonatomic, strong) UIColor *backViewColor;
-//背景图片
+
+/**
+ 背景图片
+ */
 @property (nonatomic, strong) UIImage *backViewImage;
+
+
+/**
+ imageView加载图片失败重试次数(默认2次)
+ */
+@property (nonatomic, assign) NSInteger faileReloadTimes;
 
 
 @end

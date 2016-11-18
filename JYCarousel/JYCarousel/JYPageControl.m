@@ -63,7 +63,7 @@ static CGFloat pageControlMagin = 20.0;
             [superView addSubview:self.pageControl];
         }
         self.pageControl.numberOfPages = _numberOfPages;
-        self.pageControl.frame = CGRectMake(0, CGRectGetHeight(self.superViewFrame) - 30, CGRectGetWidth(self.superViewFrame), 30);
+        self.pageControl.frame = CGRectMake(0, CGRectGetHeight(self.superViewFrame) - 25, CGRectGetWidth(self.superViewFrame), 25);
         
         CGSize pointSize = [self.pageControl sizeForNumberOfPages:self.numberOfPages];
         CGFloat page_x = (self.pageControl.bounds.size.width - pointSize.width - 2*pageControlMagin) / 2 ;
