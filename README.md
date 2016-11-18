@@ -36,6 +36,8 @@
 - **JYCarouselAnimation**
 	- 作用：轮播翻页的效果动画
 
+![](https://on-img.com/chart_image/thumb/mind/582e6ad3e4b06bc83a185bc3.png)
+
 
 ## **3. 轮播组件的使用**
 
