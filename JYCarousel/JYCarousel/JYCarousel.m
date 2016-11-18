@@ -18,6 +18,9 @@
 
 @interface JYCarousel ()<UIScrollViewDelegate>
 
+//图片数据(里面可以存放UIImage对象、NSString对象【本地图片名】、NSURL对象【远程图片的URL】)
+@property (strong, nonatomic) NSMutableArray *images;
+
 #pragma mark -----------私有属性-------------------
 
 @property (nonatomic, strong) UIScrollView  *scrollView;
@@ -43,6 +46,8 @@
 //动画
 @property (nonatomic, strong) JYCarouselAnimation *animation;
 
+@property (nonatomic, weak) id<JYCarouselDelegate>delegate;
+
 @end
 
 
@@ -55,18 +60,35 @@
     if (self) {
         self.imageIndex = 0;
         if (configBlock) {
-            __weak CarouselConfigurationBlock weakConfigBlock = configBlock;
-            
             JYConfiguration *configurate = [[JYConfiguration alloc] init];
             configurate.interValTime = DefaultTime;
-            self.config = weakConfigBlock(configurate);
+            self.config = configBlock(configurate);
         }else{
             self.config = [[JYConfiguration alloc] init];
             self.config.interValTime = DefaultTime;
         }
         if (clickBlock) {
-            __weak CarouselClickBlock weakClickBlock = clickBlock;
+            __weak __typeof__(clickBlock) weakClickBlock = clickBlock;
             self.clickBlock = weakClickBlock;
+        }
+        [self initView];
+    }
+    return self;
+}
+
+
+- (instancetype)initWithFrame:(CGRect)frame configBlock:(CarouselConfigurationBlock)configBlock target:(id<JYCarouselDelegate>)target{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.imageIndex = 0;
+        self.delegate = target;
+        if (configBlock) {
+            JYConfiguration *configurate = [[JYConfiguration alloc] init];
+            configurate.interValTime = DefaultTime;
+            self.config = configBlock(configurate);
+        }else{
+            self.config = [[JYConfiguration alloc] init];
+            self.config.interValTime = DefaultTime;
         }
         [self initView];
     }
@@ -135,8 +157,12 @@
     }
 }
 
+//开始轮播
+- (void)startCarouselWithArray:(NSMutableArray *)imageArray{
+    self.images = imageArray;
+}
 
-#pragma mark - -----------set方法开始运行-------------------
+#pragma mark - -----------set方法-------------------
 - (void)setImages:(NSMutableArray *)images{
     NSInteger num = images.count;
     if (images.count > 0) {
@@ -218,6 +244,10 @@
     if (self.clickBlock) {
         [self changeImageIndex];
         weakSelf.clickBlock(weakSelf.imageIndex-1);
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(carouselViewClick:)]) {
+        [self.delegate carouselViewClick:self.imageIndex-1];
     }
 }
 

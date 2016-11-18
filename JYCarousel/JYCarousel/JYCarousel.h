@@ -10,19 +10,49 @@
 #import "JYConfiguration.h"
 #import "JYPageControl.h"
 
+
+@protocol JYCarouselDelegate <NSObject>
+
+@optional
+- (void)carouselViewClick:(NSInteger)index;
+
+@end
+
 @interface JYCarousel : UIView
 
-#pragma mark -自定义变量
-//图片数据(里面可以存放UIImage对象、NSString对象【本地图片名】、NSURL对象【远程图片的URL】)
-@property (strong, nonatomic) NSMutableArray *images;
+#pragma mark -initMethod
 
-#pragma mark -初始化方法
+/**
+ block方式回调初始化
+
+ @param frame       frame
+ @param configBlock 轮播属性配置
+ @param clickBlock  点击回调
+
+ @return carousel
+ */
 - (instancetype)initWithFrame:(CGRect)frame configBlock:(CarouselConfigurationBlock)configBlock clickBlock:(CarouselClickBlock)clickBlock;
 
 
+/**
+ delegate方式回调初始化
+ 
+ @param frame       frame
+ @param configBlock 轮播属性配置
+ @param target      delegate
+ 
+ @return carousel
+ */
+- (instancetype)initWithFrame:(CGRect)frame configBlock:(CarouselConfigurationBlock)configBlock target:(id<JYCarouselDelegate>)target;
 
 
 
+/**
+ start Carousel
+
+ @param imageArray imageArray(里面可以存放UIImage对象、NSString对象【本地图片名】、NSURL对象【远程图片的URL】)
+ */
+- (void)startCarouselWithArray:(NSMutableArray *)imageArray;
 
 
 

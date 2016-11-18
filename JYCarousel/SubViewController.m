@@ -10,7 +10,7 @@
 #import "JYCarousel.h"
 #import "JYImageCache.h"
 
-@interface SubViewController ()
+@interface SubViewController ()<JYCarouselDelegate>
 @property (nonatomic, strong) JYCarousel *carouselView2;
 
 @end
@@ -42,8 +42,8 @@
     } clickBlock:^(NSInteger index) {
         [weakSelf clickIndex:index];
     }];
-    
-    carouselView.images = imageArray;
+    //开始轮播
+    [carouselView startCarouselWithArray:imageArray];
     [self.view addSubview:carouselView];
 }
 - (void)addCarouselView2{
@@ -61,7 +61,8 @@
         [weakSelf clickIndex:index];
     }];
     
-    _carouselView2.images = imageArray2;
+    //开始轮播
+    [_carouselView2 startCarouselWithArray:imageArray2];
     [self.view addSubview:_carouselView2];
 }
 
@@ -80,7 +81,8 @@
         [weakSelf clickIndex:index];
     }];
     
-    carouselView.images = imageArray;
+    //开始轮播
+    [carouselView startCarouselWithArray:imageArray];
     [self.view addSubview:carouselView];
 }
 
@@ -99,12 +101,12 @@
         [weakSelf clickIndex:index];
     }];
     
-    carouselView.images = imageArray;
+    //开始轮播
+    [carouselView startCarouselWithArray:imageArray];
     [self.view addSubview:carouselView];
 }
 
 - (void)addCarouselView5{
-    __weak typeof(self) weakSelf = self;
     //_carouselView5
     NSMutableArray *imageArray = [[NSMutableArray alloc] initWithArray: @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg"]];
     
@@ -114,16 +116,16 @@
         carouselConfig.pushAnimationType = PushCameraIrisHollowOpen;
         carouselConfig.backViewImage = [UIImage imageNamed:@"default"];
         return carouselConfig;
-    } clickBlock:^(NSInteger index) {
-        [weakSelf clickIndex:index];
-    }];
+    } target:self];
     
-    carouselView.images = imageArray;
+    //开始轮播
+    [carouselView startCarouselWithArray:imageArray];
     [self.view addSubview:carouselView];
 }
 
-
-
+- (void)carouselViewClick:(NSInteger)index{
+    NSLog(@"代理方式你点击图片索引index = %ld",index);
+}
 
 - (void)clickIndex:(NSInteger)index{
     NSLog(@"你点击图片索引index = %ld",index);
