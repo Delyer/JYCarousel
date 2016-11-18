@@ -20,11 +20,6 @@
 - (instancetype)initWithFrame:(CGRect)frame configBlock:(CarouselConfigurationBlock)configBlock clickBlock:(CarouselClickBlock)clickBlock;
 
 
-//开始定时器
-- (void)beginTimer;
-
-//销毁定时器
-- (void)stopTimer;
 
 
 

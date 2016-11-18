@@ -11,6 +11,8 @@
 
 @class JYConfiguration;
 
+#define kDebugLog
+
 //imageView的个数
 #define AllImageViewCount 3
 

@@ -14,6 +14,7 @@
 #import "JYCarousel.h"
 #import "UIImageView+JYImageViewManager.h"
 #import "JYCarouselAnimation.h"
+#import "JYWeakTimer.h"
 
 @interface JYCarousel ()<UIScrollViewDelegate>
 
@@ -224,7 +225,8 @@
 //开始定时器
 - (void)beginTimer{
     if ((self.config.interValTime >0) && (self.timer == nil) && self.isAutoPlay) {
-        self.timer =[NSTimer scheduledTimerWithTimeInterval:self.config.interValTime target:self selector:@selector(timeAction) userInfo:nil repeats:YES];
+        self.timer = [JYWeakTimer scheduledTimerWithTimeInterval:self.config.interValTime target:self selector:@selector(timeAction) userInfo:nil repeats:YES];
+
         [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     }
 }
@@ -235,6 +237,22 @@
         [self.timer invalidate];
         self.timer = nil;
     }
+}
+
+/// 暂停
+- (void)pauseTimer {
+    if (!self.timer.isValid) return;
+    [self.timer setFireDate:[NSDate distantFuture]];
+}
+/// 恢复
+- (void)resumeTimer {
+    if (!self.timer.isValid) return;
+    [self.timer setFireDate:[NSDate date]];
+}
+/// 多少秒后恢复
+- (void)resumeWithTimeInterval:(NSTimeInterval)time {
+    if (!self.timer.isValid) return;
+    [self.timer setFireDate:[NSDate dateWithTimeIntervalSinceNow:time]];
 }
 
 - (void)timeAction{
@@ -260,15 +278,13 @@
 //开始拖拽
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     //暂停定时器
-    [self stopTimer];
+    [self pauseTimer];
 }
 
 //结束拖拽
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    //开始定时器
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((self.config.interValTime>0?self.config.interValTime:DefaultTime)* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self beginTimer];
-    });
+    //恢复定时器
+    [self resumeWithTimeInterval:self.config.interValTime];
 }
 
 //位置发生变化
@@ -303,5 +319,11 @@
     }
 }
 
+- (void)dealloc{
+    [self stopTimer];
+#ifdef kDebugLog
+    NSLog(@"销毁定时器");
+#endif
+}
 
 @end
