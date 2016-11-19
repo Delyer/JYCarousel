@@ -7,7 +7,7 @@
 **开源库简介：** 这是一个使用起来非常简单的开源轮播库，自带下载和缓存，不会造成循环引用，不用考虑定时器不会销毁（我都已经帮你做好了）。
 
 
-![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselIcon.png)
+![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselImage/JYCarouselIcon.png)
 
 
 ## **1. 轮播基本原理**
@@ -17,7 +17,7 @@
 比如三张图A、B、C。要做的scrollview实际上应该是五张的大小顺序是C、A、B、C、A。初始偏移量设置到第二张，监听scrollview滑动事件。判断偏移量。当偏移量在第一张时将偏移量修改到第四张，当偏移量在第五张时将偏移量调整到第二章。这样在循环时比较流畅，才能无缝无限循环滚动
 
 
-![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselAnimation.gif)
+![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselImage/JYCarouselAnimation.gif)
 
 
 ## **2. 轮播的特性**
@@ -59,7 +59,7 @@
 - **JYCarouselAnimation**
 	- 作用：轮播翻页的效果动画
 
-![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselStruct.png)
+![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselImage/JYCarouselStruct.png)
 
 ## **4. 轮播组件的使用**
 
