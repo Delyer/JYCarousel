@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A30184151DDE6A6F00AC8F13 /* JYCarouselAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */; };
 		A30184181DDEAD4000AC8F13 /* JYWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A30184171DDEAD4000AC8F13 /* JYWeakTimer.m */; };
+		A30184771DDFDE5700AC8F13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A30184761DDFDE5700AC8F13 /* AppDelegate.m */; };
 		A33B0F7F1DDA887400D85447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F7E1DDA887400D85447 /* main.m */; };
 		A33B0F851DDA887400D85447 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F841DDA887400D85447 /* ViewController.m */; };
 		A33B0F8A1DDA887400D85447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33B0F891DDA887400D85447 /* Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		A33B0F981DDA887400D85447 /* JYCarouselTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F971DDA887400D85447 /* JYCarouselTests.m */; };
 		A33B0FA31DDA887400D85447 /* JYCarouselUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FA21DDA887400D85447 /* JYCarouselUITests.m */; };
 		A33B0FB11DDA894F00D85447 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A33B0FB01DDA894F00D85447 /* ViewController.xib */; };
-		A33B0FB61DDA8A3F00D85447 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FB51DDA8A3F00D85447 /* AppDelegate.m */; };
 		A33B0FBA1DDA8BFF00D85447 /* JYConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FB91DDA8BFF00D85447 /* JYConfiguration.m */; };
 		A33B0FBD1DDA904000D85447 /* JYCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FBC1DDA904000D85447 /* JYCarousel.m */; };
 		A343A4C61DDD04540008192B /* JYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A343A4C51DDD04540008192B /* JYPageControl.m */; };
@@ -48,6 +48,8 @@
 		A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCarouselAnimation.m; sourceTree = "<group>"; };
 		A30184161DDEAD4000AC8F13 /* JYWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYWeakTimer.h; sourceTree = "<group>"; };
 		A30184171DDEAD4000AC8F13 /* JYWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYWeakTimer.m; sourceTree = "<group>"; };
+		A30184751DDFDE5700AC8F13 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A30184761DDFDE5700AC8F13 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A33B0F7A1DDA887400D85447 /* JYCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JYCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33B0F7E1DDA887400D85447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A33B0F831DDA887400D85447 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -62,8 +64,6 @@
 		A33B0FA21DDA887400D85447 /* JYCarouselUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCarouselUITests.m; sourceTree = "<group>"; };
 		A33B0FA41DDA887400D85447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A33B0FB01DDA894F00D85447 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		A33B0FB41DDA8A3F00D85447 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A33B0FB51DDA8A3F00D85447 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A33B0FB81DDA8BFF00D85447 /* JYConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYConfiguration.h; sourceTree = "<group>"; };
 		A33B0FB91DDA8BFF00D85447 /* JYConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYConfiguration.m; sourceTree = "<group>"; };
 		A33B0FBB1DDA904000D85447 /* JYCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCarousel.h; sourceTree = "<group>"; };
@@ -134,7 +134,8 @@
 				A33B0FB01DDA894F00D85447 /* ViewController.xib */,
 				A35554A31DDE53C400418BE6 /* SubViewController.h */,
 				A35554A41DDE53C400418BE6 /* SubViewController.m */,
-				A33B0FB21DDA8A2000D85447 /* App */,
+				A30184751DDFDE5700AC8F13 /* AppDelegate.h */,
+				A30184761DDFDE5700AC8F13 /* AppDelegate.m */,
 				A33B0FB71DDA8A5A00D85447 /* Resoure(资源) */,
 				A33B0F7D1DDA887400D85447 /* Supporting Files */,
 			);
@@ -165,15 +166,6 @@
 				A33B0FA41DDA887400D85447 /* Info.plist */,
 			);
 			path = JYCarouselUITests;
-			sourceTree = "<group>";
-		};
-		A33B0FB21DDA8A2000D85447 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				A33B0FB41DDA8A3F00D85447 /* AppDelegate.h */,
-				A33B0FB51DDA8A3F00D85447 /* AppDelegate.m */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		A33B0FB31DDA8A2000D85447 /* JYCarousel */ = {
@@ -350,8 +342,8 @@
 				A33B0FBD1DDA904000D85447 /* JYCarousel.m in Sources */,
 				A355549F1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m in Sources */,
 				A35554A51DDE53C400418BE6 /* SubViewController.m in Sources */,
+				A30184771DDFDE5700AC8F13 /* AppDelegate.m in Sources */,
 				A343A4C61DDD04540008192B /* JYPageControl.m in Sources */,
-				A33B0FB61DDA8A3F00D85447 /* AppDelegate.m in Sources */,
 				A35554A21DDE338C00418BE6 /* JYImageCache.m in Sources */,
 				A33B0FBA1DDA8BFF00D85447 /* JYConfiguration.m in Sources */,
 			);
