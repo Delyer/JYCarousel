@@ -136,6 +136,7 @@
 				A35554A41DDE53C400418BE6 /* SubViewController.m */,
 				A30184751DDFDE5700AC8F13 /* AppDelegate.h */,
 				A30184761DDFDE5700AC8F13 /* AppDelegate.m */,
+				A33B0F7E1DDA887400D85447 /* main.m */,
 				A33B0FB71DDA8A5A00D85447 /* Resoure(资源) */,
 				A33B0F7D1DDA887400D85447 /* Supporting Files */,
 			);
@@ -145,7 +146,6 @@
 		A33B0F7D1DDA887400D85447 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A33B0F7E1DDA887400D85447 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
