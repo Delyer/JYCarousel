@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   }
 
   s.author             = { "Delyer" => "jiayaoit@126.com" }
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/Delyer/JYCarousel.git", :tag => s.version }
   s.source_files  = "JYCarousel/JYCarousel/*.{h,m}"
   s.framework  = "UIKit", "Foundation"
