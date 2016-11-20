@@ -40,7 +40,7 @@ static CGFloat pageControlMagin = 20.0;
             self.pageLabel.layer.cornerRadius = 17.0;
             self.pageLabel.layer.masksToBounds = YES;
             self.pageLabel.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
-            self.pageLabel.text = [NSString stringWithFormat:@"%d/%ld",1,self.numberOfPages];
+            self.pageLabel.text = [NSString stringWithFormat:@"%d/%ld",1,(long)self.numberOfPages];
             [superView addSubview:self.pageLabel];
             
         }else if (self.pageLabel && (self.numberOfPages == 1)){
@@ -97,7 +97,7 @@ static CGFloat pageControlMagin = 20.0;
 
 - (void)updateCurrentPageWithIndex:(NSInteger)index{
     self.pageControl.currentPage = index;
-    self.pageLabel.text = [NSString stringWithFormat:@"%ld/%ld",(index+1),self.numberOfPages];
+    self.pageLabel.text = [NSString stringWithFormat:@"%ld/%ld",(index+1),(long)self.numberOfPages];
 }
 
 
