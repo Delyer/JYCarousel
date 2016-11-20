@@ -9,8 +9,15 @@
 
 ![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselImage/JYCarouselIcon.png)
 
+## **1. 轮播库引用方式**
 
-## **1. 轮播基本原理**
+- **1.直接下载工程，把包含源代码的文件夹JYCarousel引入工程即可使用**
+- **2.支持cocoapods。当前版本0.0.1 在Podfile文件中添加以下文字即可：**
+```
+pod 'JYCarousel', '~> 0.0.1'
+```
+
+## **2. 轮播基本原理**
 
 使用三个imageView添加到ScrollView，始终保持中间的imageView在可视界面里。当前的imageView滚动到下一个imageView，然后把下一个imageView滚动到三个imageView的中心位置，在这过程中赋值的时候是三个imageView同时赋值，滚动的时候找到最中间的imageView，把这个imageView的tag值设置为当前的索引，滚动完成后把这个imageView设置为中心滚动位置。
 
@@ -20,7 +27,7 @@
 ![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselImage/JYCarouselAnimation.gif)
 
 
-## **2. 轮播的特性**
+## **3. 轮播的特性**
 - **无缝循环轮播，处理的很好，不会显得生硬**
 
 - **自带图片下载和缓存，不依赖任何第三方，引入即可使用，不用任何配置**
@@ -38,7 +45,7 @@
 - **支持轮播翻页的各种动画**
 
 
-## **3. 代码文件结构和功能**
+## **4. 代码文件结构和功能**
 
 **JYCarousel**
 
@@ -61,7 +68,7 @@
 
 ![](https://github.com/Delyer/JYCarousel/raw/master/JYCarouselImage/JYCarouselStruct.png)
 
-## **4. 轮播组件的使用**
+## **5. 轮播组件的使用**
 
 #### **提供两个初始化方法：**
 
@@ -154,7 +161,7 @@
 ```
 
 
-## **5. 注意事项**
+## **6. 注意事项**
 
 内存得不到释放造成内存泄露，使用循环引用了。请注意使用。看下面在block回调处，对Self是使用弱引用的，不然内存是得不到释放的。
 <pre>
@@ -171,7 +178,7 @@
  [self.view addSubview:carouselView];
 </pre>
 
-## **6. 下个版本预告**
+## **7. 下个版本预告**
 
 - 添加启动超时自动清除缓存功能
 - 添加titlLabel标签等
