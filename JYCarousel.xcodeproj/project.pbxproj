@@ -11,19 +11,22 @@
 		A30184181DDEAD4000AC8F13 /* JYWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A30184171DDEAD4000AC8F13 /* JYWeakTimer.m */; };
 		A329E9581DDFED81003D312B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A329E9571DDFED81003D312B /* AppDelegate.m */; };
 		A33B0F7F1DDA887400D85447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F7E1DDA887400D85447 /* main.m */; };
-		A33B0F851DDA887400D85447 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F841DDA887400D85447 /* ViewController.m */; };
 		A33B0F8A1DDA887400D85447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33B0F891DDA887400D85447 /* Assets.xcassets */; };
 		A33B0F8D1DDA887400D85447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33B0F8B1DDA887400D85447 /* LaunchScreen.storyboard */; };
 		A33B0F981DDA887400D85447 /* JYCarouselTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F971DDA887400D85447 /* JYCarouselTests.m */; };
 		A33B0FA31DDA887400D85447 /* JYCarouselUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FA21DDA887400D85447 /* JYCarouselUITests.m */; };
-		A33B0FB11DDA894F00D85447 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A33B0FB01DDA894F00D85447 /* ViewController.xib */; };
 		A33B0FBA1DDA8BFF00D85447 /* JYConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FB91DDA8BFF00D85447 /* JYConfiguration.m */; };
 		A33B0FBD1DDA904000D85447 /* JYCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FBC1DDA904000D85447 /* JYCarousel.m */; };
 		A343A4C61DDD04540008192B /* JYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A343A4C51DDD04540008192B /* JYPageControl.m */; };
 		A355549C1DDE2C6600418BE6 /* JYImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A355549B1DDE2C6600418BE6 /* JYImageDownloader.m */; };
 		A355549F1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A355549E1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m */; };
 		A35554A21DDE338C00418BE6 /* JYImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A35554A11DDE338C00418BE6 /* JYImageCache.m */; };
-		A35554A51DDE53C400418BE6 /* SubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A35554A41DDE53C400418BE6 /* SubViewController.m */; };
+		A373ED8D1DEF687E0006F533 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A373ED8B1DEF687E0006F533 /* RootViewController.m */; };
+		A373ED8E1DEF687E0006F533 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A373ED8C1DEF687E0006F533 /* RootViewController.xib */; };
+		A373ED921DEF69B80006F533 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A373ED901DEF69B80006F533 /* DemoViewController.m */; };
+		A373ED931DEF69B80006F533 /* DemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A373ED911DEF69B80006F533 /* DemoViewController.xib */; };
+		A3ABF4C31DEF589C0002A01D /* CarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3ABF4C11DEF589C0002A01D /* CarouselTableViewCell.m */; };
+		A3ABF4C41DEF589C0002A01D /* CarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3ABF4C21DEF589C0002A01D /* CarouselTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +55,6 @@
 		A329E9571DDFED81003D312B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A33B0F7A1DDA887400D85447 /* JYCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JYCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33B0F7E1DDA887400D85447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A33B0F831DDA887400D85447 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A33B0F841DDA887400D85447 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A33B0F891DDA887400D85447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A33B0F8C1DDA887400D85447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A33B0F8E1DDA887400D85447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		A33B0F9E1DDA887400D85447 /* JYCarouselUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JYCarouselUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33B0FA21DDA887400D85447 /* JYCarouselUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCarouselUITests.m; sourceTree = "<group>"; };
 		A33B0FA41DDA887400D85447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A33B0FB01DDA894F00D85447 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		A33B0FB81DDA8BFF00D85447 /* JYConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYConfiguration.h; sourceTree = "<group>"; };
 		A33B0FB91DDA8BFF00D85447 /* JYConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYConfiguration.m; sourceTree = "<group>"; };
 		A33B0FBB1DDA904000D85447 /* JYCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCarousel.h; sourceTree = "<group>"; };
@@ -76,8 +76,15 @@
 		A355549E1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JYImageViewManager.m"; sourceTree = "<group>"; };
 		A35554A01DDE338C00418BE6 /* JYImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYImageCache.h; sourceTree = "<group>"; };
 		A35554A11DDE338C00418BE6 /* JYImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYImageCache.m; sourceTree = "<group>"; };
-		A35554A31DDE53C400418BE6 /* SubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubViewController.h; sourceTree = "<group>"; };
-		A35554A41DDE53C400418BE6 /* SubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubViewController.m; sourceTree = "<group>"; };
+		A373ED8A1DEF687E0006F533 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		A373ED8B1DEF687E0006F533 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		A373ED8C1DEF687E0006F533 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		A373ED8F1DEF69B80006F533 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		A373ED901DEF69B80006F533 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		A373ED911DEF69B80006F533 /* DemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoViewController.xib; sourceTree = "<group>"; };
+		A3ABF4C01DEF589C0002A01D /* CarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselTableViewCell.h; sourceTree = "<group>"; };
+		A3ABF4C11DEF589C0002A01D /* CarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselTableViewCell.m; sourceTree = "<group>"; };
+		A3ABF4C21DEF589C0002A01D /* CarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,11 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A33B0FB31DDA8A2000D85447 /* JYCarousel */,
-				A33B0F831DDA887400D85447 /* ViewController.h */,
-				A33B0F841DDA887400D85447 /* ViewController.m */,
-				A33B0FB01DDA894F00D85447 /* ViewController.xib */,
-				A35554A31DDE53C400418BE6 /* SubViewController.h */,
-				A35554A41DDE53C400418BE6 /* SubViewController.m */,
+				A3ABF4B51DEF576D0002A01D /* ViewController */,
 				A329E9551DDFED81003D312B /* App */,
 				A33B0FB71DDA8A5A00D85447 /* Resoure(资源) */,
 				A33B0F7D1DDA887400D85447 /* Supporting Files */,
@@ -207,6 +210,22 @@
 				A33B0F8B1DDA887400D85447 /* LaunchScreen.storyboard */,
 			);
 			name = "Resoure(资源)";
+			sourceTree = "<group>";
+		};
+		A3ABF4B51DEF576D0002A01D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A373ED8A1DEF687E0006F533 /* RootViewController.h */,
+				A373ED8B1DEF687E0006F533 /* RootViewController.m */,
+				A373ED8C1DEF687E0006F533 /* RootViewController.xib */,
+				A373ED8F1DEF69B80006F533 /* DemoViewController.h */,
+				A373ED901DEF69B80006F533 /* DemoViewController.m */,
+				A373ED911DEF69B80006F533 /* DemoViewController.xib */,
+				A3ABF4C01DEF589C0002A01D /* CarouselTableViewCell.h */,
+				A3ABF4C11DEF589C0002A01D /* CarouselTableViewCell.m */,
+				A3ABF4C21DEF589C0002A01D /* CarouselTableViewCell.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,8 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A33B0F8D1DDA887400D85447 /* LaunchScreen.storyboard in Resources */,
-				A33B0FB11DDA894F00D85447 /* ViewController.xib in Resources */,
+				A3ABF4C41DEF589C0002A01D /* CarouselTableViewCell.xib in Resources */,
+				A373ED8E1DEF687E0006F533 /* RootViewController.xib in Resources */,
 				A33B0F8A1DDA887400D85447 /* Assets.xcassets in Resources */,
+				A373ED931DEF69B80006F533 /* DemoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,14 +363,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A33B0F851DDA887400D85447 /* ViewController.m in Sources */,
 				A33B0F7F1DDA887400D85447 /* main.m in Sources */,
 				A30184151DDE6A6F00AC8F13 /* JYCarouselAnimation.m in Sources */,
+				A373ED8D1DEF687E0006F533 /* RootViewController.m in Sources */,
 				A355549C1DDE2C6600418BE6 /* JYImageDownloader.m in Sources */,
+				A373ED921DEF69B80006F533 /* DemoViewController.m in Sources */,
 				A30184181DDEAD4000AC8F13 /* JYWeakTimer.m in Sources */,
 				A33B0FBD1DDA904000D85447 /* JYCarousel.m in Sources */,
+				A3ABF4C31DEF589C0002A01D /* CarouselTableViewCell.m in Sources */,
 				A355549F1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m in Sources */,
-				A35554A51DDE53C400418BE6 /* SubViewController.m in Sources */,
 				A329E9581DDFED81003D312B /* AppDelegate.m in Sources */,
 				A343A4C61DDD04540008192B /* JYPageControl.m in Sources */,
 				A35554A21DDE338C00418BE6 /* JYImageCache.m in Sources */,
@@ -498,7 +520,7 @@
 				INFOPLIST_FILE = JYCarousel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Delyer.JYCarousel;
+				PRODUCT_BUNDLE_IDENTIFIER = Dely.JYCarousel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -511,7 +533,7 @@
 				INFOPLIST_FILE = JYCarousel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Delyer.JYCarousel;
+				PRODUCT_BUNDLE_IDENTIFIER = Dely.JYCarousel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

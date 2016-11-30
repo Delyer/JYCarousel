@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "RootViewController.h"
+#import "JYImageCache.h"
 
 @interface AppDelegate ()
 
@@ -21,10 +22,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ViewController *vc = [[ViewController alloc] init];
+    RootViewController *vc = [[RootViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+    
+    //每次启动时，检查是否超时，清除缓存(这里是10分钟)
+    [[JYImageCache sharedImageCache] jy_clearDiskCachesWithTimeout:10.0/60];
     
     return YES;
 }

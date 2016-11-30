@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+FOUNDATION_EXPORT NSString *const JYDidSettingTime;
 
 #define kDebugLog
 
@@ -25,6 +26,22 @@
 
 - (void)jy_clearCacheFaileTimesDict;
 - (void)jy_clearDiskCaches;
+
+/**
+ 超时清除缓存，可以在App启动时设置，以后就会定时清除轮播的缓存
+
+ @param time 超时时间（单位为h）
+ */
+- (void)jy_clearDiskCachesWithTimeout:(NSTimeInterval)time;
+
+
+/**
+ 修改超时清除缓存的时间
+
+ @param time 重新设定的超时时间（单位为h）
+ */
+- (void)jy_changeDiskCacheWithTimeout:(NSTimeInterval)time;
+
 
 
 @end

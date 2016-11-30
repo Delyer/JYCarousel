@@ -12,6 +12,7 @@
 
 #define Default_cachePath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/JYCarouselImages"]
 
+NSString *const JYDidSettingTime = @"JYDidSettingTime";
 
 #pragma mark --------NSString的分类方法-----------
 @interface NSString (md5Hash)
@@ -170,6 +171,47 @@
     }
     
     return 0;
+}
+
+
+- (void)jy_clearDiskCachesWithTimeout:(NSTimeInterval)time{
+    NSDate *nowDate = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd-HH:mm:ss";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *settingTime = [defaults objectForKey:JYDidSettingTime];
+    
+    if (!settingTime ||[settingTime isEqualToString:JYDidSettingTime] ) {
+        NSTimeInterval  timeInterval = 60*60*time;
+        NSDate *tmpDate = [nowDate initWithTimeIntervalSinceNow:timeInterval];
+        NSString *string = [formatter stringFromDate:tmpDate];
+        [defaults setObject:string forKey:JYDidSettingTime];
+        [defaults synchronize];
+    }else{
+        NSString *nowDateString = [formatter stringFromDate:nowDate];
+        if ([settingTime compare:nowDateString] == NSOrderedAscending) {
+            //升序，说明时间到了 清除缓存
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+            dispatch_async(queue, ^{
+                NSString *directoryPath = [NSString jy_cachePath];
+                
+                if ([[NSFileManager defaultManager] fileExistsAtPath:directoryPath isDirectory:nil]) {
+                    NSError *error = nil;
+                    [[NSFileManager defaultManager] removeItemAtPath:directoryPath error:&error];
+                }
+                [self jy_clearCacheFaileTimesDict];
+                [defaults setObject:JYDidSettingTime forKey:JYDidSettingTime];
+                [defaults synchronize];
+            });
+        }
+    }
+}
+
+- (void)jy_changeDiskCacheWithTimeout:(NSTimeInterval)time{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:JYDidSettingTime forKey:JYDidSettingTime];
+    [defaults synchronize];
+    [self jy_clearDiskCachesWithTimeout:time];
 }
 
 

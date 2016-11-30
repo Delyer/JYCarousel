@@ -23,7 +23,7 @@
     if(self.target) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [self.target performSelector:self.selector withObject:timer.userInfo afterDelay:0.0f];
+        [self.target performSelector:self.selector withObject:timer.userInfo afterDelay:0.0f inModes:@[NSRunLoopCommonModes]];
 #pragma clang diagnostic pop
     } else {
         [self.timer invalidate];
