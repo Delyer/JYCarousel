@@ -48,10 +48,21 @@
 
 @property (nonatomic, weak) id<JYCarouselDelegate>delegate;
 
+//轮播背景图片
+@property (nonatomic, strong) UIImageView *backImageView;
+
 @end
 
 
 @implementation JYCarousel
+
+- (NSMutableArray *)imageViewArray{
+    if (!_imageViewArray) {
+        _imageViewArray =[[NSMutableArray alloc] init];
+    }
+    return _imageViewArray;
+}
+
 
 #pragma mark -----------初始化-------------------
 
@@ -71,7 +82,8 @@
             __weak __typeof__(clickBlock) weakClickBlock = clickBlock;
             self.clickBlock = weakClickBlock;
         }
-        [self initView];
+        [self initSelfView];
+        [self updateSelfView];
     }
     return self;
 }
@@ -90,28 +102,47 @@
             self.config = [[JYConfiguration alloc] init];
             self.config.interValTime = DefaultTime;
         }
-        [self initView];
+        [self initSelfView];
+        [self updateSelfView];
     }
     return self;
 }
 
-- (void)initView{
-    self.imageViewArray = [NSMutableArray array];
-    self.pageControl = [[JYPageControl alloc] init];
+- (void)initSelfView{
+
+    if (!self.pageControl) {
+        self.pageControl = [[JYPageControl alloc] init];
+    }
+    if (!_backImageView) {
+        _backImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewWidth(self), ViewHeight(self))];
+        _backImageView.userInteractionEnabled = YES;
+        _backImageView.contentMode = UIViewContentModeScaleToFill;
+        [self addSubview:_backImageView];
+    }
+    
+    if (!self.animation) {
+        self.animation = [[JYCarouselAnimation alloc] init];
+    }
+    
+    [self addSubView];
+}
+
+- (void)updateSelfView{
+    
     if (self.config.backViewColor) {
         self.backgroundColor = self.config.backViewColor;
     }
+    
     if (self.config.backViewImage) {
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewWidth(self), ViewHeight(self))];
-        imageView.userInteractionEnabled = YES;
-        imageView.contentMode = UIViewContentModeScaleToFill;
-        imageView.image = self.config.backViewImage;
-        [self addSubview:imageView];
+        _backImageView.image = self.config.backViewImage;
     }
-    if (!self.animation) {
-        self.animation = [[JYCarouselAnimation alloc] initWithConfiguration:self.config];
+    
+    [self.animation updateDataWithConfiguration:self.config];
+    
+    for (UIImageView *imageView in self.imageViewArray) {
+        imageView.contentMode = self.config.contentMode;
+        imageView.reloadTimesForFailedURL = self.config.faileReloadTimes;
     }
-    [self addSubView];
 }
 
 //添加scrollView和imageView
@@ -158,19 +189,47 @@
     }
 }
 
+- (void)updateConfigWithBlock:(CarouselConfigurationBlock)configBlock{
+    JYConfiguration *configurate = self.config;
+    if (configBlock) {
+        self.config = configBlock(configurate);
+        [self updateSelfView];
+    }
+}
+
+
 //开始轮播
 - (void)startCarouselWithArray:(NSMutableArray *)imageArray{
     self.images = imageArray;
 }
 
+//开始轮播（以新的轮播样式来运行）
+- (void)startCarouselWithNewConfig:(CarouselConfigurationBlock)configBlock array:(NSMutableArray *)imageArray{
+    if (!self.config) {
+        self.config = [[JYConfiguration alloc] init];
+    }
+    JYConfiguration *configurate = self.config;
+    if (configBlock) {
+        self.config = configBlock(configurate);
+        [self updateSelfView];
+    }
+    
+    [self startCarouselWithArray:imageArray];
+}
+
 #pragma mark - -----------set方法-------------------
 - (void)setImages:(NSMutableArray *)images{
+
     NSInteger num = images.count;
     if (images.count > 0) {
         id firstObj = [images firstObject];
         id lastObj = [images lastObject];
         [images insertObject:lastObj atIndex:0];
         [images insertObject:firstObj atIndex:images.count];
+    }
+    
+    if (!_images) {
+        _images = [NSMutableArray array];
     }
     _images = images;
     self.imageIndex = 1;

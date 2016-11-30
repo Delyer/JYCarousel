@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) JYConfiguration *config;
 
-- (instancetype)initWithConfiguration:(JYConfiguration *)config;
+- (void)updateDataWithConfiguration:(JYConfiguration *)config;
 
 - (void)startAnimationInView:(UIView *)view;
 

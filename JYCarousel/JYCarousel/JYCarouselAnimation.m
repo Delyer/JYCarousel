@@ -10,13 +10,9 @@
 
 @implementation JYCarouselAnimation
 
-- (instancetype)initWithConfiguration:(JYConfiguration *)config{
-    self = [super init];
-    if (self) {
-        self.config = config;
-        self.pushAnimationType = config.pushAnimationType;
-    }
-    return self;
+- (void)updateDataWithConfiguration:(JYConfiguration *)config{
+    self.config = config;
+    self.pushAnimationType = config.pushAnimationType;
 }
 
 - (void)startAnimationInView:(UIView *)view{

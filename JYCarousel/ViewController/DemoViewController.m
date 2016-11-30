@@ -9,6 +9,10 @@
 #import "DemoViewController.h"
 #import "CarouselTableViewCell.h"
 #import "JYCarousel.h"
+#import "JYImageCache.h"
+
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 
 @interface DemoViewController ()<UITableViewDataSource,UITableViewDelegate,JYCarouselDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -42,8 +46,8 @@
     NSMutableArray *imageArray = [[NSMutableArray alloc] initWithArray: @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg"]];
     
     if (!_carouselView1) {
-        _carouselView1= [[JYCarousel alloc] initWithFrame:CGRectMake(0, 0, ViewWidth(self.view), 100) configBlock:^JYConfiguration *(JYConfiguration *carouselConfig) {
-            carouselConfig.pageContollType = LabelPageControl;
+        _carouselView1= [[JYCarousel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100) configBlock:^JYConfiguration *(JYConfiguration *carouselConfig) {
+            carouselConfig.pageContollType = RightPageControl;
             carouselConfig.interValTime = 3;
             carouselConfig.pushAnimationType = PushCube;
             carouselConfig.animationSubtype = kCATransitionFromRight;
@@ -59,10 +63,23 @@
 }
 
 - (void)clickIndex:(NSInteger)index{
-    NSLog(@"你点击图片索引index = %ld",index);
+    NSLog(@"你点击图片索引index = %ld\n下面我更新样式代码在下面",index);
     //清除缓存数据 可以在启动的时候清除一次上一次轮播缓存,根据自己需要
-    //[[JYImageCache sharedImageCache] jy_clearDiskCaches];
+//    [[JYImageCache sharedImageCache] jy_clearDiskCaches];
+    
+    //更新样式
+    NSMutableArray *imageArray = [[NSMutableArray alloc] initWithArray: @[@"4.jpg",@"3.jpg",@"2.jpg",@"1.jpg"]];
+    [_carouselView1 startCarouselWithNewConfig:^JYConfiguration *(JYConfiguration *carouselConfig) {
+        carouselConfig.interValTime = 1.0;
+        carouselConfig.pageContollType = LabelPageControl;
+        carouselConfig.pushAnimationType = PushSuckEffect;
+        return carouselConfig;
+    } array:imageArray];
+ 
 }
+
+
+
 
 #pragma mark ======================代理回调方式创建======================
 - (void)addCarouselView2{
@@ -95,7 +112,7 @@
 #pragma mark ======================tableView上JYCarousel应用======================
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 100;
+    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
