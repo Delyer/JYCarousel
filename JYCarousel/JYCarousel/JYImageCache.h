@@ -11,7 +11,7 @@
 
 FOUNDATION_EXPORT NSString *const JYDidSettingTime;
 
-#define kDebugLog
+//#define kDebugLog
 
 @interface JYImageCache : NSObject
 

@@ -13,8 +13,6 @@
 		A33B0F7F1DDA887400D85447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F7E1DDA887400D85447 /* main.m */; };
 		A33B0F8A1DDA887400D85447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33B0F891DDA887400D85447 /* Assets.xcassets */; };
 		A33B0F8D1DDA887400D85447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33B0F8B1DDA887400D85447 /* LaunchScreen.storyboard */; };
-		A33B0F981DDA887400D85447 /* JYCarouselTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F971DDA887400D85447 /* JYCarouselTests.m */; };
-		A33B0FA31DDA887400D85447 /* JYCarouselUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FA21DDA887400D85447 /* JYCarouselUITests.m */; };
 		A33B0FBA1DDA8BFF00D85447 /* JYConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FB91DDA8BFF00D85447 /* JYConfiguration.m */; };
 		A33B0FBD1DDA904000D85447 /* JYCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FBC1DDA904000D85447 /* JYCarousel.m */; };
 		A343A4C61DDD04540008192B /* JYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A343A4C51DDD04540008192B /* JYPageControl.m */; };
@@ -29,23 +27,6 @@
 		A3ABF4C41DEF589C0002A01D /* CarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3ABF4C21DEF589C0002A01D /* CarouselTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A33B0F941DDA887400D85447 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A33B0F721DDA887400D85447 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A33B0F791DDA887400D85447;
-			remoteInfo = JYCarousel;
-		};
-		A33B0F9F1DDA887400D85447 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A33B0F721DDA887400D85447 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A33B0F791DDA887400D85447;
-			remoteInfo = JYCarousel;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		A30184131DDE6A6F00AC8F13 /* JYCarouselAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCarouselAnimation.h; sourceTree = "<group>"; };
 		A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCarouselAnimation.m; sourceTree = "<group>"; };
@@ -58,12 +39,6 @@
 		A33B0F891DDA887400D85447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A33B0F8C1DDA887400D85447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A33B0F8E1DDA887400D85447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A33B0F931DDA887400D85447 /* JYCarouselTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JYCarouselTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A33B0F971DDA887400D85447 /* JYCarouselTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCarouselTests.m; sourceTree = "<group>"; };
-		A33B0F991DDA887400D85447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A33B0F9E1DDA887400D85447 /* JYCarouselUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JYCarouselUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A33B0FA21DDA887400D85447 /* JYCarouselUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCarouselUITests.m; sourceTree = "<group>"; };
-		A33B0FA41DDA887400D85447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A33B0FB81DDA8BFF00D85447 /* JYConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYConfiguration.h; sourceTree = "<group>"; };
 		A33B0FB91DDA8BFF00D85447 /* JYConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYConfiguration.m; sourceTree = "<group>"; };
 		A33B0FBB1DDA904000D85447 /* JYCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCarousel.h; sourceTree = "<group>"; };
@@ -95,20 +70,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A33B0F901DDA887400D85447 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A33B0F9B1DDA887400D85447 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,8 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				A33B0F7C1DDA887400D85447 /* JYCarousel */,
-				A33B0F961DDA887400D85447 /* JYCarouselTests */,
-				A33B0FA11DDA887400D85447 /* JYCarouselUITests */,
 				A33B0F7B1DDA887400D85447 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,8 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				A33B0F7A1DDA887400D85447 /* JYCarousel.app */,
-				A33B0F931DDA887400D85447 /* JYCarouselTests.xctest */,
-				A33B0F9E1DDA887400D85447 /* JYCarouselUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,24 +116,6 @@
 				A33B0F7E1DDA887400D85447 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A33B0F961DDA887400D85447 /* JYCarouselTests */ = {
-			isa = PBXGroup;
-			children = (
-				A33B0F971DDA887400D85447 /* JYCarouselTests.m */,
-				A33B0F991DDA887400D85447 /* Info.plist */,
-			);
-			path = JYCarouselTests;
-			sourceTree = "<group>";
-		};
-		A33B0FA11DDA887400D85447 /* JYCarouselUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A33B0FA21DDA887400D85447 /* JYCarouselUITests.m */,
-				A33B0FA41DDA887400D85447 /* Info.plist */,
-			);
-			path = JYCarouselUITests;
 			sourceTree = "<group>";
 		};
 		A33B0FB31DDA8A2000D85447 /* JYCarousel */ = {
@@ -248,42 +187,6 @@
 			productReference = A33B0F7A1DDA887400D85447 /* JYCarousel.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A33B0F921DDA887400D85447 /* JYCarouselTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A33B0FAA1DDA887400D85447 /* Build configuration list for PBXNativeTarget "JYCarouselTests" */;
-			buildPhases = (
-				A33B0F8F1DDA887400D85447 /* Sources */,
-				A33B0F901DDA887400D85447 /* Frameworks */,
-				A33B0F911DDA887400D85447 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A33B0F951DDA887400D85447 /* PBXTargetDependency */,
-			);
-			name = JYCarouselTests;
-			productName = JYCarouselTests;
-			productReference = A33B0F931DDA887400D85447 /* JYCarouselTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A33B0F9D1DDA887400D85447 /* JYCarouselUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A33B0FAD1DDA887400D85447 /* Build configuration list for PBXNativeTarget "JYCarouselUITests" */;
-			buildPhases = (
-				A33B0F9A1DDA887400D85447 /* Sources */,
-				A33B0F9B1DDA887400D85447 /* Frameworks */,
-				A33B0F9C1DDA887400D85447 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A33B0FA01DDA887400D85447 /* PBXTargetDependency */,
-			);
-			name = JYCarouselUITests;
-			productName = JYCarouselUITests;
-			productReference = A33B0F9E1DDA887400D85447 /* JYCarouselUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -296,16 +199,6 @@
 					A33B0F791DDA887400D85447 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Manual;
-					};
-					A33B0F921DDA887400D85447 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = A33B0F791DDA887400D85447;
-					};
-					A33B0F9D1DDA887400D85447 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = A33B0F791DDA887400D85447;
 					};
 				};
 			};
@@ -323,8 +216,6 @@
 			projectRoot = "";
 			targets = (
 				A33B0F791DDA887400D85447 /* JYCarousel */,
-				A33B0F921DDA887400D85447 /* JYCarouselTests */,
-				A33B0F9D1DDA887400D85447 /* JYCarouselUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,20 +230,6 @@
 				A373ED8E1DEF687E0006F533 /* RootViewController.xib in Resources */,
 				A33B0F8A1DDA887400D85447 /* Assets.xcassets in Resources */,
 				A373ED931DEF69B80006F533 /* DemoViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A33B0F911DDA887400D85447 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A33B0F9C1DDA887400D85447 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,36 +256,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A33B0F8F1DDA887400D85447 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A33B0F981DDA887400D85447 /* JYCarouselTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A33B0F9A1DDA887400D85447 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A33B0FA31DDA887400D85447 /* JYCarouselUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A33B0F951DDA887400D85447 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A33B0F791DDA887400D85447 /* JYCarousel */;
-			targetProxy = A33B0F941DDA887400D85447 /* PBXContainerItemProxy */;
-		};
-		A33B0FA01DDA887400D85447 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A33B0F791DDA887400D85447 /* JYCarousel */;
-			targetProxy = A33B0F9F1DDA887400D85447 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A33B0F8B1DDA887400D85447 /* LaunchScreen.storyboard */ = {
@@ -538,52 +386,6 @@
 			};
 			name = Release;
 		};
-		A33B0FAB1DDA887400D85447 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = JYCarouselTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Dely.JYCarouselTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JYCarousel.app/JYCarousel";
-			};
-			name = Debug;
-		};
-		A33B0FAC1DDA887400D85447 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = JYCarouselTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Dely.JYCarouselTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JYCarousel.app/JYCarousel";
-			};
-			name = Release;
-		};
-		A33B0FAE1DDA887400D85447 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = JYCarouselUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Dely.JYCarouselUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = JYCarousel;
-			};
-			name = Debug;
-		};
-		A33B0FAF1DDA887400D85447 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = JYCarouselUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Dely.JYCarouselUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = JYCarousel;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -601,24 +403,6 @@
 			buildConfigurations = (
 				A33B0FA81DDA887400D85447 /* Debug */,
 				A33B0FA91DDA887400D85447 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A33B0FAA1DDA887400D85447 /* Build configuration list for PBXNativeTarget "JYCarouselTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A33B0FAB1DDA887400D85447 /* Debug */,
-				A33B0FAC1DDA887400D85447 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A33B0FAD1DDA887400D85447 /* Build configuration list for PBXNativeTarget "JYCarouselUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A33B0FAE1DDA887400D85447 /* Debug */,
-				A33B0FAF1DDA887400D85447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
