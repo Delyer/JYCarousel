@@ -14,7 +14,6 @@
  * 作者：Delyer
  * 简书：http://www.jianshu.com/users/e95705fe04d9    （现在写博客的主要地方）
  * 个人博客：http://dely.vip
- * 新浪博客：http://blog.sina.com.cn/u/1721109400
  * github：https://github.com/Delyer
  * 邮箱：jiayaoit@126.com
  * 微信：Delyer521

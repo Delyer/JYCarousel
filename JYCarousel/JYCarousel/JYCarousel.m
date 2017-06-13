@@ -10,10 +10,8 @@
  三张图A、B、C你要做的scrollview实际上应该是五张的大小顺序是C、A、B、C、A。初始偏移量设置到第二张，监听scrollview滑动事件。判断偏移量。当偏移量在第一张时将偏移量修改到第四张，当偏移量在第五张时将偏移量调整到第二章。这样在循环时比较流畅
  */
 
-
 #import "JYCarousel.h"
 #import "UIImageView+JYImageViewManager.h"
-#import "JYCarouselAnimation.h"
 #import "JYWeakTimer.h"
 
 @interface JYCarousel ()<UIScrollViewDelegate>
@@ -42,9 +40,6 @@
 
 //是否自动轮播,默认是轮播的
 @property (nonatomic, assign) BOOL isAutoPlay;
-
-//动画
-@property (nonatomic, strong) JYCarouselAnimation *animation;
 
 @property (nonatomic, weak) id<JYCarouselDelegate>delegate;
 
@@ -120,24 +115,10 @@
         [self addSubview:_backImageView];
     }
     
-    if (!self.animation) {
-        self.animation = [[JYCarouselAnimation alloc] init];
-    }
-    
     [self addSubView];
 }
 
 - (void)updateSelfView{
-    
-    if (self.config.backViewColor) {
-        self.backgroundColor = self.config.backViewColor;
-    }
-    
-    if (self.config.backViewImage) {
-        _backImageView.image = self.config.backViewImage;
-    }
-    
-    [self.animation updateDataWithConfiguration:self.config];
     
     for (UIImageView *imageView in self.imageViewArray) {
         imageView.contentMode = self.config.contentMode;
@@ -346,22 +327,14 @@
 }
 
 - (void)timeAction{
-    __weak typeof(self)weakSelf = self;
-    if (self.config.pushAnimationType == PushDefault) {
-        [UIView animateWithDuration:0.35 animations:^{
-            weakSelf.scrollView.contentOffset = CGPointMake(2 *ViewWidth(self.scrollView), 0);
-        } completion:^(BOOL finished) {
-            [self changeImageIndex];
-            [weakSelf updateImageViewContent];
-            [weakSelf setupScrollViewContentSize];
-        }];
-    }else{
-        [self.animation startAnimationInView:weakSelf.scrollView];
+    [UIView animateWithDuration:0.35 animations:^{
         self.scrollView.contentOffset = CGPointMake(2 *ViewWidth(self.scrollView), 0);
+    } completion:^(BOOL finished) {
         [self changeImageIndex];
         [self updateImageViewContent];
         [self setupScrollViewContentSize];
-    }
+    }];
+
 }
 
 #pragma mark - -------------------UIScrollViewDelegate-------------------

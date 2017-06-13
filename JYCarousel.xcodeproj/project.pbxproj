@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A30184151DDE6A6F00AC8F13 /* JYCarouselAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */; };
 		A30184181DDEAD4000AC8F13 /* JYWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A30184171DDEAD4000AC8F13 /* JYWeakTimer.m */; };
 		A329E9581DDFED81003D312B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A329E9571DDFED81003D312B /* AppDelegate.m */; };
 		A33B0F7F1DDA887400D85447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0F7E1DDA887400D85447 /* main.m */; };
@@ -28,8 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A30184131DDE6A6F00AC8F13 /* JYCarouselAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCarouselAnimation.h; sourceTree = "<group>"; };
-		A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCarouselAnimation.m; sourceTree = "<group>"; };
 		A30184161DDEAD4000AC8F13 /* JYWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYWeakTimer.h; sourceTree = "<group>"; };
 		A30184171DDEAD4000AC8F13 /* JYWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYWeakTimer.m; sourceTree = "<group>"; };
 		A329E9561DDFED81003D312B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,8 +130,6 @@
 				A355549B1DDE2C6600418BE6 /* JYImageDownloader.m */,
 				A35554A01DDE338C00418BE6 /* JYImageCache.h */,
 				A35554A11DDE338C00418BE6 /* JYImageCache.m */,
-				A30184131DDE6A6F00AC8F13 /* JYCarouselAnimation.h */,
-				A30184141DDE6A6F00AC8F13 /* JYCarouselAnimation.m */,
 				A30184161DDEAD4000AC8F13 /* JYWeakTimer.h */,
 				A30184171DDEAD4000AC8F13 /* JYWeakTimer.m */,
 			);
@@ -241,7 +236,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A33B0F7F1DDA887400D85447 /* main.m in Sources */,
-				A30184151DDE6A6F00AC8F13 /* JYCarouselAnimation.m in Sources */,
 				A373ED8D1DEF687E0006F533 /* RootViewController.m in Sources */,
 				A355549C1DDE2C6600418BE6 /* JYImageDownloader.m in Sources */,
 				A373ED921DEF69B80006F533 /* DemoViewController.m in Sources */,

@@ -49,8 +49,6 @@
         _carouselView1= [[JYCarousel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100) configBlock:^JYConfiguration *(JYConfiguration *carouselConfig) {
             carouselConfig.pageContollType = RightPageControl;
             carouselConfig.interValTime = 3;
-            carouselConfig.pushAnimationType = PushCube;
-            carouselConfig.animationSubtype = kCATransitionFromRight;
             return carouselConfig;
         } clickBlock:^(NSInteger index) {
             [weakSelf clickIndex:index];
@@ -72,7 +70,6 @@
     [_carouselView1 startCarouselWithNewConfig:^JYConfiguration *(JYConfiguration *carouselConfig) {
         carouselConfig.interValTime = 1.0;
         carouselConfig.pageContollType = LabelPageControl;
-        carouselConfig.pushAnimationType = PushSuckEffect;
         return carouselConfig;
     } array:imageArray];
  
@@ -112,7 +109,7 @@
 #pragma mark ======================tableView上JYCarousel应用======================
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 50;
+    return 0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

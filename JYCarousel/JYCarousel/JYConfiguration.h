@@ -52,25 +52,6 @@ typedef NS_ENUM(NSInteger, CarouselPageControllType) {
     NonePageControl
 };
 
-typedef NS_ENUM(NSInteger ,CarouselPushType) {
-    PushDefault = 0,    //默认平稳过渡
-    PushCurlUp,         //向上翻一页
-    PushCurlDown,       //向下翻一页
-    PushFilpFromLeft,   //从左翻转
-    PushFilpFromRight,  //从右翻转
-    PushFade,           //交叉淡化过渡
-    PushMoveIn,         //新视图移到旧视图上面 依靠animationSubtype方向
-    PushReveal,         //将旧视图移开，显示下面的新视图 依靠animationSubtype方向
-    PushPush,           //推挤
-    PushCube,           //立方体效果 依靠animationSubtype方向
-    PushPageCurl,       //翻页 依靠animationSubtype方向
-    PushPageUnCurl,     //反翻页 依靠animationSubtype方向
-    PushRippleEffect,   //滴水效果
-    PushSuckEffect,      //收缩效果
-    PushCameraIrisHollowOpen,  //镜头开
-    PushCameraIrisHollowClose //镜头关
-};
-
 //定时器默认时间
 static NSTimeInterval DefaultTime = 3.0;
 
@@ -106,33 +87,6 @@ static NSTimeInterval DefaultTime = 3.0;
  图片填充类型(默认是UIViewContentModeScaleToFill)
  */
 @property (nonatomic, assign) UIViewContentMode contentMode;
-
-
-/**
- 轮播翻页类型
- */
-@property (nonatomic, assign) CarouselPushType pushAnimationType;
-
-#pragma mark - push翻页方向（只会在CarouselPushType为PushMoveIn、PushReveal、PushCube、PushPageCurl、PushPageUnCurl有效果）
-
-/**
- *  kCATransitionFromRight
- *  kCATransitionFromLeft
- *  kCATransitionFromTop
- *  kCATransitionFromBottom
- */
-@property (nonatomic, strong) NSString *animationSubtype;
-
-#pragma mark - 轮播背景颜色或者背景图片(在PushCameraIrisHollowOpen,  PushCameraIrisHollowClose, PushPageUnCurl, PushPageCurl,PushCube能看到效果)
-/**
- 轮播背景颜色
- */
-@property (nonatomic, strong) UIColor *backViewColor;
-
-/**
- 背景图片
- */
-@property (nonatomic, strong) UIImage *backViewImage;
 
 
 /**
