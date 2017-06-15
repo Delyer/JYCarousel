@@ -152,14 +152,15 @@ NSString *const JYDidSettingTime = @"JYDidSettingTime";
 - (void)jy_cacheFailRequest:(NSURLRequest *)request{
     
     NSNumber *faileTimes = [self.jy_cacheFaileTimesDict objectForKey:[NSString jy_md5Hash:[NSString jy_keyForRequest:request]]];
-    NSInteger times = 0;
-    if (faileTimes && [faileTimes respondsToSelector:@selector(integerValue)]) {
-        times = [faileTimes integerValue];
-    }
-    times++;
     
-    [self.jy_cacheFaileTimesDict setObject:@(times) forKey:[NSString jy_md5Hash:[NSString jy_keyForRequest:request]]];
-
+    if (faileTimes) {
+        NSInteger times = 0;
+        if (faileTimes && [faileTimes respondsToSelector:@selector(integerValue)]) {
+            times = [faileTimes integerValue];
+        }
+        times++;
+        [self.jy_cacheFaileTimesDict setObject:@(times) forKey:[NSString jy_md5Hash:[NSString jy_keyForRequest:request]]];
+    }
 }
 
 - (NSUInteger)jy_failTimesForRequest:(NSURLRequest *)request{

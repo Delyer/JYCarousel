@@ -27,7 +27,7 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
-    //每次启动时，检查是否超时，清除缓存(这里是10分钟)
+    //每次启动时，检查是否超时，清除缓存(单位是小时这里是10分钟)
     [[JYImageCache sharedImageCache] jy_clearDiskCachesWithTimeout:10.0/60];
     
     return YES;

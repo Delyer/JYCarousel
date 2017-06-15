@@ -19,6 +19,9 @@
 //图片数据(里面可以存放UIImage对象、NSString对象【本地图片名】、NSURL对象【远程图片的URL】)
 @property (strong, nonatomic) NSMutableArray *images;
 
+//title数据
+@property (strong, nonatomic) NSMutableArray *titles;
+
 #pragma mark -----------私有属性-------------------
 
 @property (nonatomic, strong) UIScrollView  *scrollView;
@@ -36,15 +39,14 @@
 
 @property (nonatomic, strong) JYPageControl *pageControl;
 
+@property (nonatomic, strong) JYTitleLabel *titleLabel;
+
 @property (nonatomic, strong) NSTimer *timer;
 
 //是否自动轮播,默认是轮播的
 @property (nonatomic, assign) BOOL isAutoPlay;
 
 @property (nonatomic, weak) id<JYCarouselDelegate>delegate;
-
-//轮播背景图片
-@property (nonatomic, strong) UIImageView *backImageView;
 
 @end
 
@@ -58,6 +60,12 @@
     return _imageViewArray;
 }
 
+- (NSMutableArray *)titles{
+    if (!_titles) {
+        _titles =[[NSMutableArray alloc] init];
+    }
+    return _titles;
+}
 
 #pragma mark -----------初始化-------------------
 
@@ -68,10 +76,12 @@
         if (configBlock) {
             JYConfiguration *configurate = [[JYConfiguration alloc] init];
             configurate.interValTime = DefaultTime;
+            configurate.titleFont = DefaultTitileFont;
             self.config = configBlock(configurate);
         }else{
             self.config = [[JYConfiguration alloc] init];
             self.config.interValTime = DefaultTime;
+            self.config.titleFont = DefaultTitileFont;
         }
         if (clickBlock) {
             __weak __typeof__(clickBlock) weakClickBlock = clickBlock;
@@ -92,10 +102,12 @@
         if (configBlock) {
             JYConfiguration *configurate = [[JYConfiguration alloc] init];
             configurate.interValTime = DefaultTime;
+            configurate.titleFont = DefaultTitileFont;
             self.config = configBlock(configurate);
         }else{
             self.config = [[JYConfiguration alloc] init];
             self.config.interValTime = DefaultTime;
+            self.config.titleFont = DefaultTitileFont;
         }
         [self initSelfView];
         [self updateSelfView];
@@ -108,11 +120,9 @@
     if (!self.pageControl) {
         self.pageControl = [[JYPageControl alloc] init];
     }
-    if (!_backImageView) {
-        _backImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewWidth(self), ViewHeight(self))];
-        _backImageView.userInteractionEnabled = YES;
-        _backImageView.contentMode = UIViewContentModeScaleToFill;
-        [self addSubview:_backImageView];
+    
+    if (!self.titleLabel) {
+        self.titleLabel = [[JYTitleLabel alloc] init];
     }
     
     [self addSubView];
@@ -184,6 +194,11 @@
     self.images = imageArray;
 }
 
+- (void)startCarouselWithArray:(NSMutableArray *)imageArray titleArray:(NSMutableArray *)titleArray{
+    self.titles = titleArray;
+    self.images = imageArray;
+}
+
 //开始轮播（以新的轮播样式来运行）
 - (void)startCarouselWithNewConfig:(CarouselConfigurationBlock)configBlock array:(NSMutableArray *)imageArray{
     if (!self.config) {
@@ -196,6 +211,19 @@
     }
     
     [self startCarouselWithArray:imageArray];
+}
+
+- (void)startCarouselWithNewConfig:(CarouselConfigurationBlock)configBlock array:(NSMutableArray *)imageArray titleArray:(NSMutableArray *)titleArray{
+    if (!self.config) {
+        self.config = [[JYConfiguration alloc] init];
+    }
+    JYConfiguration *configurate = self.config;
+    if (configBlock) {
+        self.config = configBlock(configurate);
+        [self updateSelfView];
+    }
+    
+    [self startCarouselWithArray:imageArray titleArray:titleArray];
 }
 
 #pragma mark - -----------set方法-------------------
@@ -214,6 +242,7 @@
     }
     _images = images;
     self.imageIndex = 1;
+    [self.titleLabel initViewWithConfiguration:self.config addInView:self];
     [self.pageControl initViewWithNumberOfPages:num configuration:self.config addInView:self];
     [self updateImageViewContent];
     [self setupScrollViewContentSize];
@@ -256,6 +285,12 @@
         }
         //更新pageControll
         [self.pageControl updateCurrentPageWithIndex:(self.imageIndex-1)];
+        
+        NSString *title;
+        if ((self.imageIndex-1) < self.titles.count) {
+            title = [self.titles objectAtIndex:(self.imageIndex-1)];
+        }
+        [self.titleLabel updateCurrentTitleLabelWithTitle:title];
     }
 }
 

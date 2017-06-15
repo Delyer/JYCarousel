@@ -14,7 +14,6 @@
  * 作者：Delyer
  * 简书：http://www.jianshu.com/users/e95705fe04d9    （现在写博客的主要地方）
  * 个人博客：http://dely.vip
- * 新浪博客：http://blog.sina.com.cn/u/1721109400
  * github：https://github.com/Delyer
  * 邮箱：jiayaoit@126.com
  * 微信：Delyer521
@@ -55,6 +54,9 @@ typedef NS_ENUM(NSInteger, CarouselPageControllType) {
 //定时器默认时间
 static NSTimeInterval DefaultTime = 3.0;
 
+//titleLabel默认大小
+static CGFloat DefaultTitileFont = 10.0;
+
 @interface JYConfiguration : NSObject
 
 /**
@@ -94,5 +96,31 @@ static NSTimeInterval DefaultTime = 3.0;
  */
 @property (nonatomic, assign) NSInteger faileReloadTimes;
 
+
+
+/**
+ titleLabel的frame（默认(0,superViewHeight-20,superViewWidth,20)）
+ */
+@property (nonatomic, assign) CGRect titleFrame;
+
+/**
+ titleLabel的font（默认10.0）
+ */
+@property (nonatomic, assign) CGFloat titleFont;
+
+/**
+ titleLabel的对齐模式（默认左对齐）
+ */
+@property (nonatomic, assign) NSTextAlignment textAlignment;
+
+/**
+ titleLabel的backgroundColor（默认黑色透明度0.5）
+ */
+@property (nonatomic, assign) UIColor *titleBackGroundColor;
+
+/**
+ titleLabel的titleColor（默认白色）
+ */
+@property (nonatomic, assign) UIColor *titleColor;
 
 @end

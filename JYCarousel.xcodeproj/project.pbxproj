@@ -15,6 +15,7 @@
 		A33B0FBA1DDA8BFF00D85447 /* JYConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FB91DDA8BFF00D85447 /* JYConfiguration.m */; };
 		A33B0FBD1DDA904000D85447 /* JYCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A33B0FBC1DDA904000D85447 /* JYCarousel.m */; };
 		A343A4C61DDD04540008192B /* JYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A343A4C51DDD04540008192B /* JYPageControl.m */; };
+		A34E807C1EF0A07100ED6EA2 /* JYTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A34E807B1EF0A07100ED6EA2 /* JYTitleLabel.m */; };
 		A355549C1DDE2C6600418BE6 /* JYImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A355549B1DDE2C6600418BE6 /* JYImageDownloader.m */; };
 		A355549F1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A355549E1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m */; };
 		A35554A21DDE338C00418BE6 /* JYImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A35554A11DDE338C00418BE6 /* JYImageCache.m */; };
@@ -42,6 +43,8 @@
 		A33B0FBC1DDA904000D85447 /* JYCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCarousel.m; sourceTree = "<group>"; };
 		A343A4C41DDD04540008192B /* JYPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPageControl.h; sourceTree = "<group>"; };
 		A343A4C51DDD04540008192B /* JYPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYPageControl.m; sourceTree = "<group>"; };
+		A34E807A1EF0A07100ED6EA2 /* JYTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYTitleLabel.h; sourceTree = "<group>"; };
+		A34E807B1EF0A07100ED6EA2 /* JYTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYTitleLabel.m; sourceTree = "<group>"; };
 		A355549A1DDE2C6600418BE6 /* JYImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYImageDownloader.h; sourceTree = "<group>"; };
 		A355549B1DDE2C6600418BE6 /* JYImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYImageDownloader.m; sourceTree = "<group>"; };
 		A355549D1DDE336B00418BE6 /* UIImageView+JYImageViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JYImageViewManager.h"; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				A33B0FB91DDA8BFF00D85447 /* JYConfiguration.m */,
 				A343A4C41DDD04540008192B /* JYPageControl.h */,
 				A343A4C51DDD04540008192B /* JYPageControl.m */,
+				A34E807A1EF0A07100ED6EA2 /* JYTitleLabel.h */,
+				A34E807B1EF0A07100ED6EA2 /* JYTitleLabel.m */,
 				A355549D1DDE336B00418BE6 /* UIImageView+JYImageViewManager.h */,
 				A355549E1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m */,
 				A355549A1DDE2C6600418BE6 /* JYImageDownloader.h */,
@@ -244,6 +249,7 @@
 				A3ABF4C31DEF589C0002A01D /* CarouselTableViewCell.m in Sources */,
 				A355549F1DDE336B00418BE6 /* UIImageView+JYImageViewManager.m in Sources */,
 				A329E9581DDFED81003D312B /* AppDelegate.m in Sources */,
+				A34E807C1EF0A07100ED6EA2 /* JYTitleLabel.m in Sources */,
 				A343A4C61DDD04540008192B /* JYPageControl.m in Sources */,
 				A35554A21DDE338C00418BE6 /* JYImageCache.m in Sources */,
 				A33B0FBA1DDA8BFF00D85447 /* JYConfiguration.m in Sources */,

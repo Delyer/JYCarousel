@@ -41,6 +41,7 @@ static CGFloat pageControlMagin = 20.0;
             self.pageLabel.layer.masksToBounds = YES;
             self.pageLabel.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
             self.pageLabel.text = [NSString stringWithFormat:@"%d/%@",1,@(self.numberOfPages)];
+            self.pageLabel.layer.zPosition = 1.0;
             [superView addSubview:self.pageLabel];
             
         }else if (self.pageLabel && (self.numberOfPages == 1)){
@@ -54,6 +55,7 @@ static CGFloat pageControlMagin = 20.0;
             self.pageControl = [[UIPageControl alloc] init];
             self.pageControl.hidesForSinglePage = YES;
             self.pageControl.userInteractionEnabled = NO;
+            self.pageControl.layer.zPosition = 1.0;
             if (self.config.currentPageTintColor) {
                 self.pageControl.currentPageIndicatorTintColor = self.config.currentPageTintColor;
             }
@@ -63,7 +65,7 @@ static CGFloat pageControlMagin = 20.0;
             [superView addSubview:self.pageControl];
         }
         self.pageControl.numberOfPages = _numberOfPages;
-        self.pageControl.frame = CGRectMake(0, CGRectGetHeight(self.superViewFrame) - 25, CGRectGetWidth(self.superViewFrame), 25);
+        self.pageControl.frame = CGRectMake(0, CGRectGetHeight(self.superViewFrame) - 20, CGRectGetWidth(self.superViewFrame), 20);
         
         CGSize pointSize = [self.pageControl sizeForNumberOfPages:self.numberOfPages];
         CGFloat page_x = (self.pageControl.bounds.size.width - pointSize.width - 2*pageControlMagin) / 2 ;

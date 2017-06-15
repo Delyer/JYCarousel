@@ -75,13 +75,12 @@
  
 }
 
-
-
-
 #pragma mark ======================代理回调方式创建======================
 - (void)addCarouselView2{
     
-    NSMutableArray *imageArray2 = [[NSMutableArray alloc] initWithArray: @[@"https://p1.bqimg.com/524586/894925a41a745ba8.jpg",@"https://p1.bqimg.com/524586/edd59898ac21642f.jpg",@"https://p1.bqimg.com/524586/d277aa654cd60c3d.jpg",@"https://p1.bqimg.com/524586/a49b8d3e1b953f25.jpg",@"https://p1.bqimg.com/524586/972bff3b7a5fb7e1.jpg"]];
+    NSMutableArray *imageArray2 = [[NSMutableArray alloc] initWithArray: @[@"http://p1.bqimg.com/524586/894925a41a745ba8.jpg",@"http://p1.bqimg.com/524586/edd59898ac21642f.jpg",@"http://p1.bqimg.com/524586/d277aa654cd60c3d.jpg",@"http://p1.bqimg.com/524586/a49b8d3e1b953f25.jpg",@"http://p1.bqimg.com/524586/972bff3b7a5fb7e1.jpg"]];
+    
+    NSMutableArray *titleArray2 = [[NSMutableArray alloc] initWithArray: @[@"http://p1.bqimg.com/524586/894925a41a745ba8.jpg",@"http://p1.bqimg.com/524586/edd59898ac21642f.jpg",@"http://p1.bqimg.com/524586/d277aa654cd60c3d.jpg",@"http://p1.bqimg.com/524586/a49b8d3e1b953f25.jpg",@"http://p1.bqimg.com/524586/972bff3b7a5fb7e1.jpg"]];
     
     if (!_carouselView2) {
         _carouselView2 = [[JYCarousel alloc] initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH, 100) configBlock:^JYConfiguration *(JYConfiguration *carouselConfig) {
@@ -90,13 +89,15 @@
             carouselConfig.currentPageTintColor = [UIColor redColor];
             carouselConfig.placeholder = [UIImage imageNamed:@"default"];
             carouselConfig.faileReloadTimes = 5;
+            carouselConfig.textAlignment = NSTextAlignmentLeft;
+            carouselConfig.pageContollType = LabelPageControl;
             return carouselConfig;
         } target:self];
         
         [self.view addSubview:_carouselView2];
     }
     //开始轮播
-    [_carouselView2 startCarouselWithArray:imageArray2];
+    [_carouselView2 startCarouselWithArray:imageArray2 titleArray:titleArray2];
     
 }
 
@@ -109,7 +110,7 @@
 #pragma mark ======================tableView上JYCarousel应用======================
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
