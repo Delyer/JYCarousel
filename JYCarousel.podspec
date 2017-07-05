@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JYCarousel"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Simple carousel Library"
   s.homepage     = "https://github.com/Delyer/JYCarousel.git"
 
