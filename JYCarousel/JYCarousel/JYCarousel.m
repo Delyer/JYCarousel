@@ -305,7 +305,8 @@
         }
         return;
     }else if ([obj isKindOfClass:[NSURL class]]) { // 远程图片URL
-        [imageView jy_setImageWithURLString:obj placeholder:self.config.placeholder];
+        NSString *URLStr = [obj absoluteString];
+        [imageView jy_setImageWithURLString:URLStr placeholder:self.config.placeholder];
         return;
     }else if ([obj isKindOfClass:[UIImage class]]) { // UIImage对象
         imageView.image = obj;
